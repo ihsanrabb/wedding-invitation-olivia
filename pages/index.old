@@ -1,0 +1,105 @@
+import { useState, useEffect } from 'react'
+import Image from "next/image";
+import { useRouter } from 'next/router'
+import { useWeddingContext } from '../WeddingContext'
+import LoadingCover from '../components/LoadingCover'
+import { getDetailRSVP } from '../utils/customFunc'
+
+export default function Home() {
+  const router = useRouter()
+  const { to, tamu } = router.query
+  const {
+    globalState: {
+      userDataRSVP,
+      pending
+    },
+    dispatch
+  } = useWeddingContext()
+  // const [timeLeft, setTimeLeft] = useState({})
+
+  useEffect(() => {
+    if(tamu) {
+      getDetailRSVP(dispatch, tamu)
+    }
+  }, [])
+
+  // useEffect(() => {
+  //   setTimeLeft(calculateTimeLeft())
+  //   const intervalId = setInterval(() => {
+  //     setTimeLeft(calculateTimeLeft())
+  //   }, 1000)
+  //   return () => clearInterval(intervalId)
+  // }, [])
+
+  const handleRoute = () => {
+    if(to) {
+      router.push(`/invitation/?to=${to}`)
+    } else if(tamu) {
+      router.push(`/invitation/?tamu=${tamu}`)
+    } else {
+      router.push(`/invitation`)
+    }
+  }
+
+  return (
+    <>
+      <Image
+        className="w-full h-auto object-cover"
+        layout="fill"
+        src="/images/dummy/couple-4.jpg"
+      />
+
+      <div className="landing">
+        <div className="mt-20">
+        </div>
+        {/* <div className="grid grid-cols-4 gap-2 mt-5">
+          <div className="box-timer">
+            <h6 className="text-2xl">{timeLeft.days}</h6>
+            <p className="text-sm">Hari</p>
+          </div>
+          <div className="box-timer">
+            <h6 className="text-2xl">{timeLeft.hours}</h6>
+            <p className="text-sm">Jam</p>
+          </div>
+          <div className="box-timer">
+            <h6 className="text-2xl">{timeLeft.minutes}</h6>
+            <p className="text-sm">Menit</p>
+          </div>
+          <div className="box-timer">
+            <h6 className="text-2xl">{timeLeft.seconds}</h6>
+            <p className="text-sm">Detik</p>
+          </div>
+        </div> */}
+        <div className="center-flex-col mb-20">
+          <h6 className="text-sub text-xl">
+            Undangan Pernikahan
+          </h6>
+          <h2 className="handwriting-name animate__animated animate__zoomIn">
+            Aliya & Arda
+          </h2>
+          <h3 className="text-sub text-md mb-5">
+            Sabtu, 30 Juni 2021
+          </h3>
+          {(to || userDataRSVP) && (
+            <>
+              <p className="text-white text-lg">Kepada Yth, Bapak/Ibu/Saudara/i</p>
+              <p className="text-white mt-3 mb-2 text-5xl text-center handwriting">
+                {to ? to : userDataRSVP?.name}
+              </p>
+            </>
+          )}
+          <p className="text-sub text-lg">You are invited to our wedding</p>
+            <button 
+              className="btn-primary mt-4"
+              onClick={handleRoute}
+            >
+              Buka Undangan
+            </button>
+        </div>
+      </div>
+      {pending && <LoadingCover />}
+    </>
+  )
+}
+
+Home.getInitialProps = async ctx => ({to: ctx.query.to, tame: ctx.query.tamu})

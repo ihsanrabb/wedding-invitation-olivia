@@ -1,0 +1,83 @@
+import React, {useState, useEffect} from 'react'
+import { analytics } from '../firebase'
+import { useRouter } from 'next/router'
+import AudioPlayer from '../components/AudioPlayer'
+import HeroCouple from '../components/HeroCouple'
+import DetailCouple from '../components/DetailCouple'
+import DetailWedding from '../components/DetailWedding'
+import FormRSVP from '../components/FormRSVP'
+import UcapanDanDoa from '../components/UcapanDanDoa'
+import RSVPConfirmation from '../components/RSVPConfirmation'
+import DetailInformation from '../components/DetailInformation'
+import Gallery from '../components/Gallery'
+import Footer from '../components/Footer'
+import { useWeddingContext } from '../WeddingContext'
+import LoadingCover from '../components/LoadingCover'
+import { 
+  initDataBestPray, 
+  getDetailRSVP,
+  initDataDetailUser
+} from '../utils/customFunc'
+
+export default function Invitation() {
+  const router = useRouter()
+  const { to, tamu } = router.query
+  const [bestPrayList, setBestPrayList] = useState([])
+  const [groupList, setGroupList] = useState([])
+  const [streamingList, setStreamingList] = useState([])
+  const {
+    globalState: {
+      userDataRSVP,
+      pending
+    },
+    dispatch
+  } = useWeddingContext()
+
+  useEffect(() => {
+    if(tamu && !userDataRSVP) {
+      getDetailRSVP(dispatch, tamu)
+    }
+    setTimeout(async() => {
+      const response = await initDataBestPray()
+      setBestPrayList(response)
+    }, 2000)
+    initDataDetailUser(setGroupList, setStreamingList)
+  }, [])
+
+  const handleTracking = () => {
+    analytics().logEvent('view_direction')
+  }
+
+  return (
+    <>
+      <HeroCouple />
+      <div className="mx-4">
+        <DetailCouple />
+        <DetailWedding handleTracking={handleTracking} />
+        {!tamu && (
+          <FormRSVP 
+            setBestPrayList={setBestPrayList} 
+            to={to}
+            groupList={groupList}
+          />
+        )}
+        {userDataRSVP && (
+          <RSVPConfirmation 
+            tamuID={tamu} 
+            groupList={groupList}  
+          />
+        )}
+      </div>
+      <UcapanDanDoa bestPrayList={bestPrayList} />
+      <div className="mx-4 lg:mx-0">
+        <DetailInformation streamingList={streamingList} />
+        <Gallery />
+      </div>
+      <AudioPlayer />
+      <Footer />
+      {pending && <LoadingCover />}
+    </>
+  )
+}
+
+Invitation.getInitialProps = async ctx => ({to: ctx.query.to, tamu: ctx.query.tamu})
