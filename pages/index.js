@@ -51,12 +51,13 @@ export default function Preview2() {
         className="cover-bg-img"
         style={{backgroundImage: `url('/images/olivia-home.jpeg')` }}
       >
-        <div style={{zIndex: 2}} className="flex flex-col items-center justify-between relative h-full py-14">
+        <div style={{zIndex: 2}} className="flex flex-col items-center justify-end relative h-full py-14">
           <div className="flex flex-col items-center">
             <p className="text-center font-desc text-lg text-white">You are invited to our wedding</p>
-            <h2 className="handwriting-name animate__animated animate__zoomIn" style={{color: '#C7A82D'}}>
+            <img src="/images/olivia-rifan-text.png" alt="olivia flower" className="md:w-1/4 w-5/6 h-5/6" />
+            {/* <h2 className="handwriting-name animate__animated animate__zoomIn" style={{color: '#C7A82D'}}>
               Olivia & Rifan 
-            </h2>
+            </h2> */}
           </div>
           {/* <h6 className="text-xl font-desc text-white">
             The wedding of
@@ -66,8 +67,9 @@ export default function Preview2() {
           <h3 className="text-xl font-desc">
             21 / Mei / 2022
           </h3> */}
-          {/* <img src="/images/aliya-flower.png" alt="aliya flower" className="md:w-1/4 w-5/6" /> */}
-          <div className="text-center text-white mt-8">
+        
+          <div className="text-center text-white mt-8 flex flex-col items-center">
+            
             {/* <div className="flex flex-col justify-center items-center mb-2">
               <img className="w-1/3 md:w-40 opacity-90" src="/images/divider-letter.png" />
             </div> */}
