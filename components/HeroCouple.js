@@ -1,3 +1,5 @@
+import Zoom from 'react-reveal/Zoom';
+
 export default function HeroCouple() {
   return (
     <section 
@@ -9,9 +11,11 @@ export default function HeroCouple() {
           The wedding of
         </h6>
         {/* <h2 className="handwriting-name animate__animated animate__zoomIn text-center mx-4" style={{fontSize: '4rem', color: '#C7A82D'}}>
-          Olivia & Rifan
+          Rifan & Olivia
         </h2> */}
-        <img src="/images/olivia-rifan-text-black.png" alt="olivia flower" className="w-5/6" />
+        <Zoom>
+          <img src="/images/olivia-rifan-text-black.png" alt="olivia flower" className="w-5/6" />
+        </Zoom>
         <h6 className="text-sub text-xl mt-2 animate__animated animate__slideInUp" style={{color: '#000'}}>
           Sabtu, 22 Oktober 2022
         </h6>

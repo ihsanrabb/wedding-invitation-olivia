@@ -43,7 +43,7 @@ export default function UcapanDanDoa() {
       <div className="mt-10">
         <div className="heading-background">
           <h1>UCAPAN & DOA</h1>
-          <h2>Olivia & Rifan</h2>
+          <h2>Rifan & Olivia</h2>
         </div>
         <div className="pt-5 pb-5 mt-4 md:pt-10 md:pb-10 md:mt-8">
           <div className="max-w-xl mx-auto p-4 md:p-0">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useWeddingContext } from '../../WeddingContext'
+import Zoom from 'react-reveal/Zoom';
 
 const generateWordingStreaming = (item) => {
   if(item.wording) {
@@ -25,45 +26,48 @@ export default function DetailWedding2({streamingList}) {
 
   return (
     <section className="max-w-xl mx-auto">
-      <div className="relative text-center py-12 px-6 mb-5 flex items-center rounded" style={{minHeight: 300, backgroundColor: '#545454'}}>
-        {/* <div className="block-bg"></div> */}
-        <div className="transbox relative">
-          <img src="/images/olivia-akad.jpeg" className="rounded w-full" />
-          <div className="flex justify-center w-full" style={{position: "absolute", bottom: 56}}>
-            <img src="/images/text-akad.png" className="w-4/5"  />
+      <Zoom>
+        <div className="relative text-center py-12 px-6 mb-5 flex items-center rounded" style={{minHeight: 300, backgroundColor: '#545454'}}>
+          {/* <div className="block-bg"></div> */}
+          <div className="transbox relative">
+            <img src="/images/olivia-akad.jpeg" className="rounded w-full" />
+            <div className="flex justify-center w-full" style={{position: "absolute", bottom: 64}}>
+              <img src="/images/text-akad.png" className="w-11/12"  />
+            </div>
+            {/* <h2 className="text-black underline text-3xl mt-4 font-bold">Akad Nikah :</h2> */}
+            <p className="text-xl font-desc text-white mt-6">Sabtu, 22 Oktober 2022</p>
+            <p className="text-xl font-desc text-white">Pukul 16.00 WIB</p>          
           </div>
-          {/* <h2 className="text-black underline text-3xl mt-4 font-bold">Akad Nikah :</h2> */}
-          <p className="text-xl font-desc text-white mt-6">Sabtu, 22 Oktober 2022</p>
-          <p className="text-xl font-desc text-white">Pukul 16.00 WIB</p>          
         </div>
-      </div>
+      </Zoom>
 
-      <div className="relative text-center py-12 px-6 mt-10 rounded" style={{minHeight: 300, backgroundColor: '#545454'}}>
-        {/* <div className="block-bg"></div> */}
-        <div className="transbox relative">
-          <img src="/images/olivia-resepsi.jpeg" className="rounded w-full" />
-          <div className="flex justify-center w-full" style={{position: "absolute", bottom: 222}}>
-            <img src="/images/text-resepsi.png" className="w-7/12"  />
+      <Zoom>
+        <div className="relative text-center py-12 px-6 mt-10 rounded" style={{minHeight: 300, backgroundColor: '#545454'}}>
+          {/* <div className="block-bg"></div> */}
+          <div className="transbox relative">
+            <img src="/images/olivia-resepsi.jpeg" className="rounded w-full" />
+            <div className="flex justify-center w-full" style={{position: "absolute", bottom: 222}}>
+              <img src="/images/text-resepsi.png" className="w-7/12"  />
+            </div>
+            {/* <h2 className="text-black underline text-3xl mt-4 font-bold">Resepsi :</h2> */}
+            <p className="text-xl font-desc mt-6 text-white">Sabtu, 22 Oktober 2022</p>
+            <p className="text-xl font-desc text-white">Sesi I: Pukul 18.30 WIB - 19.45 WIB</p>
+            <p className="text-xl font-desc text-white">Sesi II: Pukul 19.45 WIB - 21.00 WIB</p>
+            <p className="mt-4 text-xl font-desc text-white">Bertempat di Hallf Patiunus</p>
+            <p className="text-white">Jl. Pati Unus No.F4, RT.4/RW.4, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan</p>
+            <div className="btn-primary mt-3"> 
+              <a 
+                href="https://goo.gl/maps/zoGKSp83ty4YwrkH9" 
+                target="_blank"
+                className="font-desc"
+              >
+                PETUNJUK ARAH KE LOKASI
+              </a>
+            </div>
+            
           </div>
-          {/* <h2 className="text-black underline text-3xl mt-4 font-bold">Resepsi :</h2> */}
-          <p className="text-xl font-desc mt-6 text-white">Sabtu, 22 Oktober 2022</p>
-          <p className="text-xl font-desc text-white">Sesi I: Pukul 18.30 WIB - 19.45 WIB</p>
-          <p className="text-xl font-desc text-white">Sesi II: Pukul 19.45 WIB - 21.00 WIB</p>
-          <p className="mt-4 text-xl font-desc text-white">Bertempat di Hallf Patiunus</p>
-          <p className="text-white">Jl. Pati Unus No.F4, RT.4/RW.4, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan</p>
-          <div className="btn-primary mt-3"> 
-            <a 
-              href="https://goo.gl/maps/zoGKSp83ty4YwrkH9" 
-              target="_blank"
-              className="font-desc"
-            >
-              PETUNJUK ARAH KE LOKASI
-            </a>
-          </div>
-          
         </div>
-      </div>
-
+      </Zoom>
 
       {/* <div className="relative text-center py-24 px-6">
         <div className="block-bg"></div>

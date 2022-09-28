@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Slide from 'react-reveal/Slide';
 
 export default function UcapanDanDoa({bestPrayList}) {
   const router = useRouter()
@@ -6,8 +7,10 @@ export default function UcapanDanDoa({bestPrayList}) {
   return (
     <section className="mt-20 mx-auto bg-secondary bg-opacity-10 pb-10 pt-10" id="section-ucapan">
       <div className="heading-background">
-        <h1>UCAPAN & DOA</h1>
-        <h2>Olivia & Rifan</h2>
+        <Slide left>
+          <h1>UCAPAN & DOA</h1>
+          <h2>Rifan & Olivia</h2>
+        </Slide>
       </div>
       {/* <div className="mt-10">
         <SliderUcapan />
@@ -32,6 +35,7 @@ export default function UcapanDanDoa({bestPrayList}) {
               className="btn-primary font-desc text-lg" 
               type="button"
               onClick={() => router.push(`/ucapan-dan-doa`)}
+              style={{backgroundColor: '#545454', color: '#fff'}}
             >Lihat Semua</button>
           </div>
         </div>

@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="center-flex-col p-5 bg-primary">
-        <p className="handwriting text-2xl">Olivia & Rifan</p>
+        <p className="handwriting text-2xl">Rifan & Olivia</p>
         <div className="mt-3 flex gap-1 items-center">
           {/* <img 
             src="/images/afs-logo.png" 

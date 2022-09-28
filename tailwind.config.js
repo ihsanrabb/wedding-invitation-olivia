@@ -12,7 +12,7 @@ module.exports = {
       "gold": "#fafbed",
       "maroon": "#880f3a",
       "primary": "#C5A28E",
-      "secondary": "#A6A998",
+      "secondary": "#A6A6A6",
       "tertiary": "#C5A28E",
       "cyan": "#4ca1a3",
       "brown-dark": "#A9865B",

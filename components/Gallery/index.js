@@ -3,6 +3,7 @@ import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox'
 import { useRouter } from 'next/router'
 import { optionsLightbox } from '../../utils/constant'
 import { calculateTimeLeft } from '../../utils/customFunc'
+import Zoom from 'react-reveal/Zoom';
 
 export default function Gallery() {
   const router = useRouter();
@@ -17,39 +18,39 @@ export default function Gallery() {
   const galleryImages = [
     {
       imageUrl: "/images/gallery-1.jpeg",
-      name: "Olivia & Rifan"
+      name: "Rifan & Olivia"
     },
     {
       imageUrl: "/images/gallery-2.jpeg",
-      name: "Olivia & Rifan"
+      name: "Rifan & Olivia"
     },
     {
       imageUrl: "/images/gallery-3.jpeg",
-      name: "Olivia & Rifan"
+      name: "Rifan & Olivia"
     },
     // {
     //   imageUrl: "/images/Aliya-4.jpeg",
-    //   name: "Olivia & Rifan"
+    //   name: "Rifan & Olivia"
     // },
     // {
     //   imageUrl: "/images/Aliya-5.jpeg",
-    //   name: "Olivia & Rifan"
+    //   name: "Rifan & Olivia"
     // },
     // {
     //   imageUrl: "/images/Aliya-6.jpeg",
-    //   name: "Olivia & Rifan"
+    //   name: "Rifan & Olivia"
     // },
     // {
     //   imageUrl: "/images/Aliya-7.jpeg",
-    //   name: "Olivia & Rifan"
+    //   name: "Rifan & Olivia"
     // },
     // {
     //   imageUrl: "/images/Aliya-8.jpeg",
-    //   name: "Olivia & Rifan"
+    //   name: "Rifan & Olivia"
     // },
     // {
     //   imageUrl: "/images/Aliya-9.jpeg",
-    //   name: "Olivia & Rifan"
+    //   name: "Rifan & Olivia"
     // }
   ];
   
@@ -59,25 +60,29 @@ export default function Gallery() {
         <h1>GALLERY</h1>
         <h2>Aliya & Arda</h2>
       </div> */}
-      <h2 className="handwriting-name text-center mb-2" style={{fontSize: '2rem'}}>Counting Days</h2>
-      <div className="grid grid-cols-4 mx-auto mb-4" style={{maxWidth: '85%'}}>
-        <div className="text-center">
-          <p className="text-lg">{timeLeft.days}</p>
-          <small>Days</small>
+      <Zoom>
+        <h2 className="handwriting-name text-center mb-2" style={{fontSize: '2rem'}}>Counting Days</h2>
+      </Zoom>
+      <Zoom>
+        <div className="grid grid-cols-4 mx-auto mb-4" style={{maxWidth: '85%'}}>
+          <div className="text-center">
+            <p className="text-lg">{timeLeft.days}</p>
+            <small>Days</small>
+          </div>
+          <div className="text-center">
+            <p>{timeLeft.hours}</p>
+            <small>Hours</small>
+          </div>
+          <div className="text-center">
+            <p>{timeLeft.minutes}</p>
+            <small>Minutes</small>
+          </div>
+          <div className="text-center">
+            <p>{timeLeft.seconds}</p>
+            <small>Seconds</small>
+          </div>
         </div>
-        <div className="text-center">
-          <p>{timeLeft.hours}</p>
-          <small>Hours</small>
-        </div>
-        <div className="text-center">
-          <p>{timeLeft.minutes}</p>
-          <small>Minutes</small>
-        </div>
-        <div className="text-center">
-          <p>{timeLeft.seconds}</p>
-          <small>Seconds</small>
-        </div>
-      </div>
+      </Zoom>
 
 
       <SimpleReactLightbox>
@@ -107,6 +112,7 @@ export default function Gallery() {
           className="btn-tertiary" 
           type="button"
           onClick={() => router.push(`/detail-gallery`)}
+          style={{backgroundColor: '#545454', color: '#fff'}}
         >Lihat Selengkapnya</button>
       </div>
     </section>

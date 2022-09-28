@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Olivia & Rifan Wedding</title>
+        <title>Rifan & Olivia Wedding</title>
         <link rel="icon" href="/onetap.ico" />
         <meta name="title" content="#TheWeddingOfOliviaRifan" />
       </Head>

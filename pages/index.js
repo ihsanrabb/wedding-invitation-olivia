@@ -4,6 +4,7 @@ import { useWeddingContext } from '../WeddingContext'
 import { db } from '../firebase'
 import { COLLECTION_RSVP } from '../utils/constant'
 import LoadingCover from '../components/LoadingCover'
+import Fade from 'react-reveal/Fade';
 
 export default function Preview2() {
   const router = useRouter()
@@ -53,10 +54,14 @@ export default function Preview2() {
       >
         <div style={{zIndex: 2}} className="flex flex-col items-center justify-end relative h-full py-14">
           <div className="flex flex-col items-center">
-            <p className="text-center font-desc text-lg text-white">You are invited to our wedding</p>
-            <img src="/images/olivia-rifan-text.png" alt="olivia flower" className="md:w-1/4 w-5/6 h-5/6" />
+            <Fade left>
+              <p className="text-center font-desc text-lg text-white">You are invited to our wedding</p>
+            </Fade>
+            <Fade left>
+              <img src="/images/olivia-rifan-text.png" alt="olivia flower" className="md:w-1/4 w-5/6 h-5/6" />
+            </Fade>
             {/* <h2 className="handwriting-name animate__animated animate__zoomIn" style={{color: '#C7A82D'}}>
-              Olivia & Rifan 
+              Rifan & Olivia 
             </h2> */}
           </div>
           {/* <h6 className="text-xl font-desc text-white">

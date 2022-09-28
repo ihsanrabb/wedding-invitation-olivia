@@ -12,6 +12,7 @@ import {
   calculateTimeLeft,
 } from '../../utils/customFunc'
 import TemplateConfirmation from '../TemplateConfirmation'
+import Slide from 'react-reveal/Slide';
 
 export default function FormRSVP2({setBestPrayList, to, groupList}) {
   const [form, setForm] = useState(initialForm)
@@ -113,9 +114,11 @@ export default function FormRSVP2({setBestPrayList, to, groupList}) {
   return ( 
     <section className="max-w-2xl mx-auto">
       <div className="heading-background">
-        <h1>RESERVASI</h1>
-        <h2>Olivia & Rifan</h2>
-        <p className="">Silahkan Konfirmasi Kehadiran di Bawah Ini</p>
+        <Slide left>
+          <h1>RESERVASI</h1>
+          <h2>Rifan & Olivia</h2>
+          <p className="">Silahkan Konfirmasi Kehadiran di Bawah Ini</p>
+        </Slide>
       </div>
       <div className="relative py-10 rounded px-6 mt-2 bg-primary">
         <div className="flower-bg"></div>
@@ -207,6 +210,7 @@ export default function FormRSVP2({setBestPrayList, to, groupList}) {
                 type="submit"
                 onClick={onSubmitForm}
                 disabled={loadingForm}
+                style={{backgroundColor: '#545454', color: '#fff'}}
               > 
                 {loadingForm ? "Loading..." : "KIRIM UCAPAN"}
               </button>

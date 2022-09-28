@@ -1,3 +1,6 @@
+import Slide from 'react-reveal/Slide';
+import Zoom from 'react-reveal/Zoom';
+
 export default function DetailCouple2() {
   return (
     <>
@@ -10,7 +13,9 @@ export default function DetailCouple2() {
       </div> */}
       <section className="max-w-4xl mx-auto">
         <div className="heading-background">
-          <h2>Olivia & Rifan</h2>
+          <Slide left>
+            <h2>Rifan & Olivia</h2>
+          </Slide>
         </div>
         <p className="text-center text-sm mt-5">
           "Dan di antara tanda-tanda kekuasaan-Nya ialah diciptakan-Nya pasangan hidup dari jenismu sendiri, supaya kamu mendapatkan ketenangan hati, dan dijadikan-Nya rasa kasih sayang di antara kamu. Sesungguhnya yang demikian itu menjadi tanda-tanda kebesaran-Nya bagi orang-orang yang berfikir."
@@ -23,13 +28,13 @@ export default function DetailCouple2() {
         </div>
 
         {/* <img src="/images/devica-2.jpeg" className="h-80 w-full object-cover mt-4" /> */}
-        <div className="grid grid-cols-2 gap-3 mt-4">
+        {/* <div className=" mt-4">
           <div>
-            {/* <img src="/images/olivia.jpeg" className="h-80 w-full object-cover mt-4" /> */}
+            <img src="/images/olivia.jpeg" className="h-80 w-full object-cover mt-4" />
             <div className="flex flex-col items-center">
               <img src="/images/olivia.png" className="w-4/6" />
             </div>
-            {/* <p className="couple-text">Olivia</p> */}
+            <p className="couple-text">Olivia</p>
             <div className="bg-black mt-2" style={{height: '2px'}} />
             <div className="h-14">
               <p className="couple-parents uppercase">Olivia Astrinda, S.Tr.Keb</p>
@@ -40,11 +45,11 @@ export default function DetailCouple2() {
             </p>
           </div>
           <div>
-            {/* <img src="/images/rifan.jpeg" className="h-80 w-full object-cover mt-4" /> */}
+            <img src="/images/rifan.jpeg" className="h-80 w-full object-cover mt-4" />
             <div className="flex flex-col items-center">
               <img src="/images/rifan.png" className="w-4/6" />
             </div>
-            {/* <p className="couple-text">Rifan</p> */}
+            <p className="couple-text">Rifan</p>
             <div className="bg-black mt-2" style={{height: '2px'}} />
             <div className="h-14">
               <p className="couple-parents uppercase">Rifan Febrianto, S.T</p>
@@ -54,39 +59,43 @@ export default function DetailCouple2() {
               Bpk Tabri dan Ibu Titi Suharti (Ida)
             </p>
           </div>
-        </div>
+        </div> */}
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-2">
           <div className="flex flex-col justify-center items-center">
-            <img 
+            {/* <img 
               className="frame-rounded-top" 
               src="/images/Aliya-cpw.jpeg" 
               alt="brides" 
               data-aos="fade" 
               data-aos-delay="200" 
-            />
-            <p className="couple-text">dr. Nuraliyah</p>
+            /> */}
+            <Zoom>
+              <p className="couple-text">Rifan Febrianto, S.T</p>
+            </Zoom>
             <p className="couple-parents">
-              Putri dari Bpk H. Mustakim dan Ibu Hj. Puji Lestari
+              Putra dari Bpk Tabri dan Ibu Titi Suharti (Ida)
             </p>
           </div>
           <div className="flex justify-center items-center">
             <p className="handwriting text-2xl text-secondary mt-4 mb-1 md:m-0">dengan</p>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img 
+            {/* <img 
               className="frame-rounded-top" 
               src="/images/Aliya-cpp.jpeg" 
               alt="brides" 
               data-aos="fade" 
               data-aos-delay="200" 
-            />
-            <p className="couple-text">Tri Arda Prebawa, SH</p>
+            /> */}
+            <Zoom>
+              <p className="couple-text">Olivia Astrinda, S.Tr.Keb</p>
+            </Zoom>
             <p className="couple-parents">
-              Putra dari Bpk I Ketut Mertha dan Ibu Liani
+              Putri dari Bpk Muhamad Salim dan Ibu Siti Rohani
             </p>
           </div>
-        </div> */}
+        </div>
         <p className="text-center mt-8">
           Yang Insya Allah akan dilaksanakan pada : 
         </p>

@@ -30,7 +30,7 @@ export default function TemplateConfirmation({form, sessionAttend}) {
             </>
           )}
           <br />
-          Olivia & Rifan
+          Rifan & Olivia
         </p>
         {form.attendanceConfirmation === "Y" && (
           <>
