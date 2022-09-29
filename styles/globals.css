@@ -8,6 +8,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 
 html,
 body {
@@ -436,7 +437,8 @@ slide-wording {
 }
 
 .couple-text {
-  @apply mt-4 handwriting text-5xl text-center;
+  font-family: 'Tangerine', cursive;
+  @apply mt-4 text-5xl text-center;
 }
 
 .couple-parents {
