@@ -438,7 +438,7 @@ slide-wording {
 
 .couple-text {
   font-family: 'Tangerine', cursive;
-  @apply mt-4 text-5xl text-center;
+  @apply mt-4 text-4xl text-center;
 }
 
 .couple-parents {
