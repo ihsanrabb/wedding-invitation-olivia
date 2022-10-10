@@ -71,7 +71,9 @@ export default function DetailCouple2() {
               data-aos-delay="200" 
             /> */}
             <Zoom>
-              <p className="couple-text">Rifan Febrianto, S.T</p>
+              <div className="px-2">
+                <p className="couple-text">Rifan Febrianto, S.T</p>
+              </div>
             </Zoom>
             <p className="couple-parents">
               Putra dari Bpk Tabri dan Ibu Titi Suharti (Ida)
@@ -89,7 +91,9 @@ export default function DetailCouple2() {
               data-aos-delay="200" 
             /> */}
             <Zoom>
-              <p className="couple-text">Olivia Astrinda, S.Tr.Keb</p>
+              <div className="px-2">
+                <p className="couple-text">Olivia Astrinda, S.Tr.Keb</p>
+              </div>
             </Zoom>
             <p className="couple-parents">
               Putri dari Bpk Muhamad Salim dan Ibu Siti Rohani
@@ -97,7 +101,7 @@ export default function DetailCouple2() {
           </div>
         </div>
         <p className="text-center mt-8">
-          Yang Insya Allah akan dilaksanakan pada : 
+          Yang Insya Allah akan dilaksanakan pada :
         </p>
       </section>
     </>
